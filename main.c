@@ -79,10 +79,10 @@ int parse_string (char *line, int offset, int line_length, int type)
 			break;
 		}
 	}	
-	if (type == 1 && root != NULL) 
-		insert_symbol(root, var_name);
-
 	if (type == 1) {
+		if (root != NULL)
+			insert_symbol(root, var_name);
+
 		size = snprintf(buffer, 256, "\tchar %s = calloc(%d, sizeof(char));\n\0", 
 			var_name, assign_index+1);
 		fwrite(buffer, size, sizeof(char), tmp);
