@@ -1,0 +1,12 @@
+#include <stdio.h>
+int main(void)
+{
+	char a = calloc(1, sizeof(char));
+	char c = calloc(8, sizeof(char));
+	strcpy(c, "raphael");
+	c = realloc(c, 9);
+	strcpy(c, "raphaels");
+	
+	printf("%s", c);
+	return 0;
+}
